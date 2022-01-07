@@ -1,0 +1,31 @@
+<h1>hello patient: <%= @patient.patient_name%></h1>
+<%# <h1>Your Patient <%= @patient.patient_name%></h1> 
+
+<table class="table table-striped table-hover table-bordered table-sm">
+  <thead class="table-dark">
+    <tr>
+      
+        <th>Doctor Name</th>
+        <th>Symptoms</th>
+        <th>Doctor comment</th>   
+        <th>Prescription</th>   
+
+    </tr>
+  </thead>
+
+  <tbody>
+
+       <% @previousrecords.each do |previousrecord| %> 
+      <tr>
+        
+        <td><%= previousrecord.doctorName %></td>
+        <td><%= previousrecord.symptoms %></td>
+        <td><%= previousrecord.notes %></td>
+        <td><%= link_to 'View Prescription',previousrecord.image,class:"btn btn-primary btn-sm"%></td> 
+      
+
+      </tr>
+  <% end %>
+  
+  </tbody>
+</table>

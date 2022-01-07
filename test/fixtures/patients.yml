@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  patient_name: MyString
+  address: MyString
+  gender: false
+  dob: 2021-11-21
+  email: MyString
+  password_digest: <%= BCrypt::Password.create('secret') %>
+  phone: 1
+
+two:
+  patient_name: MyString
+  address: MyString
+  gender: false
+  dob: 2021-11-21
+  email: MyString
+  password_digest: <%= BCrypt::Password.create('secret') %>
+  phone: 1

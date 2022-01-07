@@ -1,0 +1,32 @@
+ </br>
+ </br>
+ <h1>Doctors</h1>
+ <table class="table table-striped table-hover table-bordered table-sm">
+  <thead class="table-dark">
+    <tr>
+      <th>Doctor name</th>
+      <th>Address</th>
+      <th>Department</th>
+      <th>Qualification</th>
+      <th>Dob</th>
+      <th>Email</th>
+      <th>Phone</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @doctors.each do |doctor| %>
+      <tr>
+        <td><%= doctor.doctor_name %></td>
+        <td><%= doctor.address %></td>
+        <td><%= doctor.department %></td>
+        <td><%= doctor.qualification %></td>
+        <td><%= doctor.dob %></td>
+        <td><%= doctor.email %></td>
+        <td><%= doctor.phone %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+  
+ 

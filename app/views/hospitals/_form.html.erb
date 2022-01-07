@@ -1,0 +1,88 @@
+
+
+<section class="vh-80 gradient-custom">
+  <div class="container py-5 h-120">
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col-12 col-lg-9 col-xl-7">
+        <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+          <div class="card-body p-6 p-md-7">
+          <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Registration Form</h3>
+            <%= form_with model: hospital do |form| %>
+            <form>
+
+            
+
+                <div class="field form-group">
+    
+                <%= form.text_field :hospital_name,  class:"form-control", placeholder:"Hospital name"%>
+                <% hospital.errors.full_messages_for(:hospital_name).each do |message| %>
+                  <div><%= message %></div>
+                <% end %>
+              </div>
+              <br />
+                
+                <div class="field form-group">
+   
+                <%= form.text_field :address, class:"form-control" , placeholder:"address"%>
+                <% hospital.errors.full_messages_for(:address).each do |message| %>
+                  <div><%= message %></div>
+                <% end %>
+              </div>
+              <br/>
+
+              <div class="field form-group">
+    
+                <%= form.text_field :email, class:"form-control", placeholder:"Email" %>
+                <% hospital.errors.full_messages_for(:email).each do |message| %>
+                 <div><%= message %></div>
+                 <% end %>
+                 </div>
+                 <br/>
+
+                 <div class="field form-group">
+   
+                 <%= form.text_field :phone,  class:"form-control",placeholder:"phone"%>
+                 <% hospital.errors.full_messages_for(:phone).each do |message| %>
+                   <div><%= message %></div>
+                 <% end %>
+               </div>
+               <br /> 
+
+                 <div class="row">
+                 <div class="col-md-6">
+
+               
+                   <%= form.password_field :password, class:"form-control", placeholder:"password" %>
+                   <% hospital.errors.full_messages_for(:password).each do |message| %>
+                     <div><%= message %></div>
+                   <% end %>
+                 </div>
+                 
+
+                 <div class="col-md-6 ">
+ 
+                 <%= form.password_field :password_confirmation , class:"form-control", placeholder:"password confirmation"%>
+                 <% hospital.errors.full_messages_for(:password_confirmation).each do |message| %>
+                   <div><%= message %></div>
+                 <% end %>
+               </div>
+               </div>
+               </br>
+                </br>
+
+              <div class="actions text-center">
+                <%= form.submit nil, class: 'btn btn-success' %>
+                <%= link_to 'Back', root_path ,class:"btn btn-primary "%>
+              </div>
+
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<% end %>
+

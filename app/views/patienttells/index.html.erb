@@ -1,0 +1,32 @@
+<h1>Write More Details</h1>
+<h1 class = "text-dark text-center bg-light" >Doctor Name:<%= @doctor.doctor_name %> </h1>
+<h1 class = "text-dark text-center bg-light" >Patient Name:<%= @patient.patient_name %> </h1>
+
+
+<%= form_with url: patienttells_path do |form| %>
+ 
+<div class="mb-3">
+    
+    <%= form.hidden_field :doctor_id, :value => @doctor.id%>
+</div>    
+<div class="mb-3">
+
+    <%= form.hidden_field :patient_id, :value => @patient.id%>
+</div>  
+<div class="mb-3">
+
+    <%= form.hidden_field :doctorappoint_id, :value => @doctorappoint.id%>
+</div> 
+<div class="mb-3">
+
+    <%= form.hidden_field :patient_name, :value => @patient.patient_name%>
+</div> 
+
+<div class="mb-3">
+    <%= form.label :notes%>
+    <%= form.text_field :notes, class:"form-control", placeholder:"Tell More Details"%>
+</div>    
+<div class="mb-3">
+    <%= form.submit 'submit', class:"btn btn-primary"%>
+</div>    
+<% end %>

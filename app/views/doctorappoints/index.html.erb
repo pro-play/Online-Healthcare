@@ -1,0 +1,27 @@
+<h1>Write Your Issue</h1>
+<h3 class = "text-light text-center bg-dark" >Doctor Name : <%= @doctor.doctor_name %> </h3>
+<h3 class = "text-light text-center bg-dark" >Patient Name : <%= @patient.patient_name %> </h3>
+
+
+<%= form_with url: doctorappoints_path do |form| %>
+ 
+<div class="mb-3">
+    
+    <%= form.hidden_field :doctor_id, :value => @doctor.id%>
+</div>    
+<div class="mb-3">
+
+    <%= form.hidden_field :patient_id, :value => @patient.id%>
+</div>  
+<div class="mb-3">
+
+    <%= form.hidden_field :patientName, :value => @patient.patient_name%>
+</div> 
+<div class="mb-3">
+    <%= form.label :notes%>
+    <%= form.text_field :notes, class:"form-control", placeholder:"Write Your Issue"%>
+</div>    
+<div class="mb-3">
+    <%= form.submit 'submit', class:"btn btn-primary"%>
+</div>    
+<% end %>

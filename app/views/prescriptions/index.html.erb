@@ -1,0 +1,39 @@
+<h1>Give Prescription</h1>
+<h1 class = "text-dark text-center bg-light" >Doctor Name:<%= @doctor.doctor_name %> </h1>
+<h1 class = "text-dark text-center bg-light" >Patient Name:<%= @patient.patient_name %></h1> 
+<td><%= link_to 'View More Details', prescriptions_patienttells_path(:doctorappoint_id => @doctorappoint.id),class:"btn btn-primary btn-sm"%></td>
+
+<%= form_with url: prescriptions_path do |form| %>
+ 
+<div class="mb-3">
+    
+    <%= form.hidden_field :doctor_id, :value => @doctor.id%>
+</div>    
+<div class="mb-3">
+
+    <%= form.hidden_field :patient_id, :value => @patient.id %>
+</div>  
+<div class="mb-3">
+
+    <%= form.hidden_field :doctorName, :value => @doctor.doctor_name %>
+</div> 
+<div class="mb-3">
+
+    <%= form.hidden_field :patient_name, :value => @patient.patient_name %>
+</div> 
+<div class="mb-3">
+
+    <%= form.hidden_field :symptoms, :value =>@doctorappoint.notes %>
+</div> 
+<div class="mb-3">
+    <%= form.label :notes %>
+    <%= form.text_field :notes, class:"form-control", placeholder:"Write the prescription"%>
+</div>    
+<div class="field mb-3">
+    <%= form.label :image %>
+    <%= form.file_field :image%>
+</div>    
+<div class="mb-3">
+    <%= form.submit 'submit', class:"btn btn-primary"%>
+</div>    
+<% end %>

@@ -1,0 +1,33 @@
+<h1>hello patient: <%= @patient.patient_name%></h1>
+<%# <h1>Your Patient <%= @patient.patient_name%></h1> 
+
+<table class="table table-striped table-hover table-bordered table-sm">
+  <thead class="table-dark">
+    <tr>
+      
+        <th>Doctor Name</th>
+        <th>PatientName</th>
+        <th>Notes</th>   
+        <th>Prescription</th>    
+
+    </tr>
+  </thead>
+
+
+  <tbody>
+
+       <% @doctorseeks.each do |doctorseek| %> 
+      <tr>
+        
+        <td><%= doctorseek.doctor_name %></td>
+        <td><%= @patient.patient_name%></td>
+        <td><%= doctorseek.notes %></td>
+
+        <td><%= link_to 'Tell more detail',patienttells_path(:doctor_id => doctorseek.doctor_id,:doctorappoint_id =>doctorseek.doctorappoint_id) ,class:"btn btn-primary btn-sm"%></td> 
+
+
+      </tr>
+  <% end %>
+  
+  </tbody>
+</table>

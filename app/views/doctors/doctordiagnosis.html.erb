@@ -1,0 +1,31 @@
+<h1>hello doctor: <%= @doctor.doctor_name%></h1>
+
+<%= link_to 'PreviousRecords', doctors_previousrecords_path  ,class:"btn btn-primary" %>
+
+<table class="table table-striped table-hover table-bordered table-sm">
+  <thead class="table-dark">
+    <tr>
+      
+      <th>patient_name</th>
+      <th>symptoms</th>
+      <th>seek details</th>
+      <th>Prescription</th>
+      <th>Delete</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+ <% @doctorappoints.each do |doctorappoint| %> 
+      <tr>
+        
+        <td><%= doctorappoint.patientName %></td>
+        <td><%= doctorappoint.notes %></td>
+        <td><%= link_to 'Ask more', doctorseeks_path(:patient_id => doctorappoint.patient_id,:doctorappoint_id => doctorappoint.id) ,class:"btn btn-primary btn-sm" %></td>
+        <td><%= link_to 'Write prescription', prescriptions_path(:patient_id => doctorappoint.patient_id,:doctorappoint_id => doctorappoint.id) ,class:"btn btn-primary btn-sm" %></td>
+        <td><%= button_to 'Remove Record', doctorappoint, method: :delete, data: { confirm: 'Are you sure?' } ,class:"btn btn-danger btn-sm"%></td>
+
+      </tr>
+  <% end %> 
+  </tbody>
+</table>

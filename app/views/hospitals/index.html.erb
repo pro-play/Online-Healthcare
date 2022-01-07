@@ -1,0 +1,28 @@
+</br>
+<h1 class = "text-light text-center bg-dark">Hospital List</h1>
+
+
+<br>
+  <table class="table table-striped table-hover table-bordered table-sm">
+  <thead class="table-dark">
+    <tr>
+      <th>Hospital name</th>
+      <th>Address</th>
+      <th>Email</th>
+      <th>Phone</th>
+      
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @hospitals.each do |hospital| %>
+      <tr>
+        <td><%= hospital.hospital_name %></td>
+        <td><%= hospital.address %></td>
+        <td><%= hospital.email %></td>
+        <td><%= hospital.phone %></td>
+      <%#  <td><%= button_to 'Remove Record', hospital, method: :delete, data: { confirm: 'Are you sure?' } ,class:"btn btn-danger btn-sm"%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

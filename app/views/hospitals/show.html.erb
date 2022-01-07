@@ -1,0 +1,25 @@
+<div class="container">
+<h1 class = "text-dark text-center bg-light"><%= @hospital.hospital_name %> Dashboard</h1>
+</div>
+<div class="doctor_page">
+<%= link_to "Edit hospital profile", edit_hospital_path(@hospital),class:"btn btn-dark btn-lg justify-right" %>
+<%= link_to "Display Doctors", hospital_doctors_path(@hospital),class:"btn btn-dark btn-lg justify-right" %>
+</div>
+<br>
+
+<%# <%= link_to "Add Doctors", new_hospital_doctor_path(@hospital),class:"btn btn-secondary btn-sm" %> 
+<section class="vh-80 gradient-custom">
+  <div class="container py-5 h-120">
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col-12 col-lg-9 col-xl-7">
+        <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+          <div class="card-body p-6 p-md-7">
+             <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Add Doctor</h3>
+
+             <%= render 'doctors/form' %>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+</section>

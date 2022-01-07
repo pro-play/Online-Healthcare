@@ -1,0 +1,30 @@
+<h1>hello Doctor: <%= @doctor.doctor_name%></h1>
+<%# <h1>Your Patient <%= @patient.patient_name%></h1> 
+
+<table class="table table-striped table-hover table-bordered table-sm">
+  <thead class="table-dark">
+    <tr>
+      
+        <th>Patient Name</th>
+        <th>Notes</th>
+         
+           
+
+    </tr>
+  </thead>
+
+  <tbody>
+
+       <% @patienttells.each do |patienttell| %> 
+      <tr>
+        
+        <td><%= patienttell.patient_name %></td>
+        <td><%= patienttell.notes %></td>
+       
+      
+
+      </tr>
+  <% end %>
+  
+  </tbody>
+</table>

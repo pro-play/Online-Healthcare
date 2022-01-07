@@ -1,0 +1,13 @@
+
+
+
+<nav class="navbar navbar-dark bg-dark justify-content-between"  >
+  <a class="navbar-brand"></a>
+  <div class="row">
+    <%= search_form_for(@q, url: patient_path(session[:patient_id]), method: :get) do |f| %>
+  <%= f.search_field :doctor_name_or_department_or_hospital_name_cont,class:"form-control",type:"search", placeholder: 'Search doctor name' %>
+
+  <%= f.submit "Search",class:"btn btn-outline-success my-2 btn-sm" %>
+<% end %>
+  </div>
+</nav>

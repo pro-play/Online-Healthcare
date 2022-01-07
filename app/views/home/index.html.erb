@@ -1,0 +1,61 @@
+<div class="p-3 mb-2 bg-secondary text-white">
+
+<% if !@patient && !@doctor && !@hospital %>
+
+
+
+       
+<center><h1>Welcome to Online Health Care</h1></center>
+<center><p style="font-size: 30px" >We Care, For Your Health</P></center>
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <center><div class="carousel-inner">
+    <div class="carousel-item active">
+    <%= image_tag ("1.jpg") , class:"d-block w-10" %>
+    </div>
+    <div class="carousel-item">
+    <%= image_tag ("2.jpg") , class:"d-block w-10" %>
+    </div>
+    <div class="carousel-item">
+    <%= image_tag ("3.jpg") , class:"d-block w-10" %>
+    </div></center>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+              
+        <br /> 
+       
+        <% end %>
+        <% if @hospital %>
+          <h2 class="content-subhead">You have logged in as <%= @hospital.hospital_name %> <%= link_to "Logout", {:controller => :hospitals, :action => :logout}, { class: 'pure-button  button-secondary'} %> </h2>
+          <p>
+            Welcome Hospital: &nbsp;<%= @hospital.hospital_name %> Hospital
+            You will have the context of the logged in Hospital in viewing all the Hospital related views. Please logout in case you are facing some issues. Have a good health!
+          </p>
+        <% end %>
+        <% if @doctor %>
+          <h2 class="content-subhead">You have logged in as Doctor  <%= link_to "Logout", {:controller => :doctors, :action => :logout}, { class: 'pure-button  button-secondary'} %></h2>
+          <p>
+            Welcome Doctor: <%= @doctor.doctor_name %>&nbsp;<%= @doctor.email %>
+            You will have the context of the logged in doctor in viewing all the doctor related views. Please logout in case you are facing some issues. Have a good health!
+          </p>
+        <% end %>
+        <% if @patient %>
+          <h2 class="content-subhead">You have logged in as <%= @patient.patient_name %>  <%= link_to "Logout", {:controller => :patients, :action => :logout}, { class: 'pure-button  button-secondary'} %></h2>
+          <p>
+            Welcome : &nbsp;<%= @patient.email %>
+            You will have the context of the logged in Patient in viewing all the Patient related views. Please logout in case you are facing some issues. Have a good health!
+          </p>
+        <% end %>
+        </div>
